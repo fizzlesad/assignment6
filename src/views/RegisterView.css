@@ -66,3 +66,59 @@
 .login-link a:hover {
   text-decoration: underline;
 }
+
+.genres-list {
+  padding: 20px;
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
+}
+
+/* List styling */
+.genres-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual checkbox item */
+.checkbox {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.checkbox:hover {
+  background-color: #f0f0f0; /* Light gray hover effect */
+}
+
+/* Styling the checkbox input */
+.checkbox input[type="checkbox"] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #4caf50; /* Green color for the checkbox */
+}
+
+/* Styling the label */
+.checkbox label {
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.checkbox label:hover {
+  color: #4caf50;
+}
+
+/* Optional: focus effect on input */
+.checkbox input[type="checkbox"]:focus {
+  outline: 2px solid #4caf50;
+  outline-offset: 2px;
+}

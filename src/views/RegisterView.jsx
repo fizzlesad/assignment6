@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 
-function RegisterView() {
+function RegisterView(props) {
   return (
     <>
       <Header />
@@ -24,6 +24,19 @@ function RegisterView() {
               name="confirm-password"
               required
             />
+
+            <div className="genres-list">
+              <ul>
+                {props.genres.map((item) => {
+                  return (
+                    <div key={item.id} className = "checkbox">
+                    <input type="checkbox" id={item.id}></input>
+                    <label htmlFor={item.id}>{item.genre}</label>
+                    </div>
+                  );
+                })}
+              </ul>
+            </div>
 
             <button type="submit" className="register-button">
               Register
