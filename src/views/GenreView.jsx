@@ -57,23 +57,37 @@ function GenreView() {
     <div className="movie-posters">
       <div className="genre-view">
         <div className="movies-container">
-          {movieArray.map((movies) => (
-            <>
-              <a key={movie.id} href={`/movies/details/${movies.id}`}>
+          {movieArray.map((movie) => (
+            <div key={movie.id} className="movie-item">
+              <a href={`/movies/details/${movie.id}`}>
                 <img
-                  src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`}
+                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                   alt={movie.title}
-                  className="movie-poster" />
-              </a><button className="cart-button" onClick={() => buyStatus((check) => check.set(params.id, { title: movieData.original_title, url: movieData.poster_path }))}>Buy</button>
-            </>
+                  className="movie-poster"
+                />
+              </a>
+              <button
+                className="cart-button"
+                onClick={() =>
+                  buyStatus((check) =>
+                    check.set(movie.id, {
+                      title: movie.original_title,
+                      url: movie.poster_path,
+                    })
+                  )
+                }
+              >
+                Buy
+              </button>
+            </div>
           ))}
-          <div class="pagination">
-            <a onClick={() => setCurrentPage(1)}>&laquo;</a>
-            <a onClick={() => movePage(-1)}>{"<"}</a>
-            <a class="active">{page}</a>
-            <a onClick={() => movePage(1)}>{">"}</a>
-            <a onClick={() => setCurrentPage(totalPages)}>&raquo;</a>
-          </div>
+        </div>
+        <div class="pagination">
+          <a onClick={() => setCurrentPage(1)}>&laquo;</a>
+          <a onClick={() => movePage(-1)}>{"<"}</a>
+          <a class="active">{page}</a>
+          <a onClick={() => movePage(1)}>{">"}</a>
+          <a onClick={() => setCurrentPage(totalPages)}>&raquo;</a>
         </div>
       </div>
     </div>

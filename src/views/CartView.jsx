@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useStoreContext } from "../context"
 import { useNavigate } from "react-router-dom";
+import "./CartView.css";
 
 const CartView = () => {
     const { cart, setCart } = useStoreContext();

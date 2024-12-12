@@ -20,27 +20,29 @@ function Header() {
             <button className="sign-up-button">Sign Up</button>
           </Link>
         </>
-      )
+      );
     } else {
       return (
-        <>
-          <p>{`Hello ${firstName}!`}</p>
-          <button onClick={() => navigate("/cart")}>Cart</button>
-          <button onClick={() => navigate("/settings")}>Settings</button>
-          <Link to={`/`}>
-            <button className="logout-button" onClick={email==""}>Logout</button>
-          </Link>
-        </>
-      )
+        <div className="user-info">
+          <p className="welcome-message">{`Hello ${firstName}!`}</p>
+          <div className="user-buttons">
+            <button onClick={() => navigate("/cart")}>Cart</button>
+            <button onClick={() => navigate("/settings")}>Settings</button>
+            <Link to={`/`}>
+              <button className="logout-button" onClick={email == ""}>Logout</button>
+            </Link>
+          </div>
+        </div>
+      );
     }
   }
 
   return (
-    <div class="opaque-top-rectangle">
+    <div className="opaque-top-rectangle">
       <Link to={`/`}>
-        <img class="possum-logo" src={logo} alt="Possum Logo" />
+        <img className="possum-logo" src={logo} alt="Possum Logo" />
       </Link>
-      <p class="title">Possum</p>
+      <p className="title">Possum</p>
       <div className="choice-side">
         {loginButtons()}
       </div>

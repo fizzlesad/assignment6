@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import { useStoreContext } from "../context";
+import "./SettingsView.css";
 
 const SettingsView = () => {
     const { email } = useStoreContext();
