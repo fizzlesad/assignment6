@@ -5,15 +5,18 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
+import { useStoreContext } from "../context/index.jsx";
 
 function LoginView() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { setEmail } = useStoreContext();
 
-  function login(event) {
-    event.preventDefault();
+  function login(e) {
+    e.preventDefault();
     if (password === "iloveyou") {
       navigate("/movies");
+      setEmail(e.target.email.value);
     } else {
       alert("Wrong password!");
     }

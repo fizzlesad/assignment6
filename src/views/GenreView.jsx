@@ -2,6 +2,7 @@ import "./GenreView.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { useStoreContext } from "../context";
 
 function GenreView() {
   const [done, setDone] = useState(false);
@@ -10,11 +11,11 @@ function GenreView() {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const params = useParams();
+  const { buy, buyStatus } = useStoreContext();
 
   const movieData = async () => {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=${
-        params.genre_id
+      `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=${params.genre_id
       }&api_key=${import.meta.env.VITE_TMDB_KEY}`
     );
     setMovieArray(response.data.results);
@@ -57,13 +58,14 @@ function GenreView() {
       <div className="genre-view">
         <div className="movies-container">
           {movieArray.map((movies) => (
-            <a key={movie.id} href={`/movies/details/${movies.id}`}>
-              <img
-                src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`}
-                alt={movie.title}
-                className="movie-poster"
-              />
-            </a>
+            <>
+              <a key={movie.id} href={`/movies/details/${movies.id}`}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`}
+                  alt={movie.title}
+                  className="movie-poster" />
+              </a><button className="cart-button" onClick={() => buyStatus((check) => check.set(params.id, { title: movieData.original_title, url: movieData.poster_path }))}>Buy</button>
+            </>
           ))}
           <div class="pagination">
             <a onClick={() => setCurrentPage(1)}>&laquo;</a>
