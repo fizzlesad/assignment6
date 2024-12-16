@@ -1,63 +1,57 @@
 .genres-container {
-  height: 100%;
   width: 100%;
-  min-width: 100px;
-  background-color: rgb(255, 255, 255);
-  grid-column: 1;
-  color: white;
-}
-
-.genres-container {
-  width: 100%;
-  max-width: 800px; /* Set a max width for the genres list */
+  max-width: 400px; /* Adjusted for single-column layout */
+  margin: 20px auto;
   padding: 20px;
-  background-color: #222; /* Dark background for the container */
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
 
-ul {
-  list-style-type: none; /* Remove the default bullet points */
-  padding: 0; /* Remove any padding */
-  margin: 0; /* Remove any margin */
+/* Genres List */
+.genres-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  gap: 10px; /* Space between items */
+  align-items: center;
 }
 
-li {
-  font-size: 1.2rem;
-  padding: 10px;
-  margin: 8px 0;
-  background-color: #333; /* Darker background for each list item */
-  border-radius: 8px;
-  color: #fff; /* White text color */
-  transition: background-color 0.3s ease, transform 0.3s ease;
+/* Individual Genre Item */
+.genre-item {
+  width: 100%; /* Make items stretch to container width */
 }
 
-li a {
-  text-decoration: none; /* Remove underline from links */
-  color: inherit; /* Inherit the color from the list item */
+/* Genre Links */
+.genre-link {
+  display: block;
+  width: 100%; /* Stretch to fill container width */
+  padding: 12px;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  text-align: center; /* Center-align the text */
 }
 
-li:hover {
-  background-color: #555; /* Lighter background on hover */
-  transform: translateY(-5px); /* Slight lift effect on hover */
-}
-
-li:first-child {
-  margin-top: 0; /* Remove top margin from the first item */
-}
-
-li:last-child {
-  margin-bottom: 0; /* Remove bottom margin from the last item */
+.genre-link:hover {
+  background: blue;
+  color: #fff;
+  transform: scale(1.05); /* Slight hover effect */
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .genres-container {
-    width: 100%;
-    padding: 15px;
-  }
-
-  li {
-    font-size: 1rem; /* Adjust font size for smaller screens */
+@media (max-width: 600px) {
+  .genre-link {
+    font-size: 0.9em;
+    padding: 10px;
   }
 }

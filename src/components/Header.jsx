@@ -28,9 +28,7 @@ function Header() {
           <div className="user-buttons">
             <button onClick={() => navigate("/cart")}>Cart</button>
             <button onClick={() => navigate("/settings")}>Settings</button>
-            <Link to={`/`}>
-              <button className="logout-button" onClick={email == ""}>Logout</button>
-            </Link>
+            <a className="logout-button" href="/">Log Out</a>
           </div>
         </div>
       );
@@ -39,9 +37,7 @@ function Header() {
 
   return (
     <div className="opaque-top-rectangle">
-      <Link to={`/`}>
-        <img className="possum-logo" src={logo} alt="Possum Logo" />
-      </Link>
+      <img className="possum-logo" src={logo} alt="Possum Logo" />
       <p className="title">Possum</p>
       <div className="choice-side">
         {loginButtons()}

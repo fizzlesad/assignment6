@@ -1,85 +1,93 @@
-/* General styles for the cart view */
-.cart-view {
-    font-family: 'Arial', sans-serif;
-    padding: 20px;
-    background-color: #f9f9f9;
-    color: #333;
-  }
-  
-  /* Cart item list container */
-  .cart-items-list {
-    margin: 20px 0;
-  }
-  
-  /* Individual cart item */
+/* General cart container styles */
+.cart-container {
+  padding: 20px;
+  background-color: #000000;
+  font-family: Arial, sans-serif;
+}
+
+/* Styling for individual cart items */
+.cart-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Images styling */
+.images {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Item details container */
+.item-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Title styling */
+.item-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+  flex: 1;
+}
+
+/* Remove button styling */
+.remove-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: #e60000;
+}
+
+/* Back button styling */
+.back-button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
   .cart-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
+    grid-template-columns: 1fr;
   }
-  
-  /* Cart item title */
-  .cart-item-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #555;
+
+  .item-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
-  
-  /* Remove button for cart item */
+
   .remove-button {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+    width: 100%;
   }
-  
-  /* Remove button hover effect */
-  .remove-button:hover {
-    background-color: #c0392b;
-  }
-  
-  /* Back button at the bottom */
-  .back-button {
-    padding: 12px 24px;
-    font-size: 16px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: inline-block;
-    margin-top: 30px;
-  }
-  
-  /* Back button hover effect */
-  .back-button:hover {
-    background-color: #2980b9;
-  }
-  
-  /* Responsive styling */
-  @media (max-width: 768px) {
-    .cart-item {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .remove-button {
-      margin-top: 10px;
-      width: 100%;
-    }
-  
-    .back-button {
-      width: 100%;
-    }
-  }
+}

@@ -37,20 +37,30 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.pagination a:hover {
-  background-color: #007bff;
+.buy-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: blue; /* Default color */
   color: white;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.pagination a.active {
-  background-color: #007bff;
-  color: white;
-  font-weight: bold;
+.buy-button:hover {
+  background-color: rgb(60, 60, 255);
+  transform: scale(1.05);
 }
 
-.pagination a:first-child,
-.pagination a:last-child {
-  font-size: 18px;
+.buy-button.added {
+  background-color: green; /* Green when added */
+  color: white;
+  cursor: not-allowed; /* Indicate it’s non-clickable */
+}
+
+.buy-button.added:hover {
+  transform: none; /* No hover effect when added */
 }
 
 @media (max-width: 1200px) {

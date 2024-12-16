@@ -26,8 +26,8 @@ function LoginView() {
     <>
       <Header />
       <div className="login-container">
+        <h2 className="login-message">Login to Your Account</h2>
         <div className="form-container">
-          <h2>Login to Your Account</h2>
           <form
             onSubmit={(event) => {
               login(event);
@@ -52,11 +52,9 @@ function LoginView() {
               Login
             </button>
           </form>
-          <Link to={`/register`}>
-            <p className="register-link">
-              New to Possum? <a href="#">Register now</a>
-            </p>
-          </Link>
+          <p className="register-link">
+            New to Possum? <Link to="/register">Register now</Link>
+          </p>
         </div>
       </div>
       <Footer />
