@@ -47,6 +47,10 @@ export const StoreProvider = ({ children }) => {
         {
             genre: "Horror",
             id: 27,
+        },
+        {
+            genre: "Western",
+            id: 37,
         }
     ]);
     const [selectedGenres, setSelectedGenres] = useState([]);
